@@ -35,8 +35,6 @@ def upload():
         # user_assignments -> record of student's assignment uploads
             # make it store what features the assignment passes
 
-    # some sort of api to tell the app to fetch student files
-
     return redirect('/')
 
 app.run(debug=True)
