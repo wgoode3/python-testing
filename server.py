@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, flash
 from werkzeug.utils import secure_filename
 import fileSearch
 
@@ -25,7 +25,18 @@ def upload():
 		if file and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-	fileSearch.testProjects()
+	fileSearch.unzipProjects()
+	t = fileSearch.testProjects()
+	flash(t)
+
+	# save these results to a db
+		# user table -> retrieve the name from their upload
+		# assignment table -> store information about the specific test
+		# user_assignments -> record of student's assignment uploads
+			# make it store what features the assignment passes
+
+	# some sort of api to tell the app to fetch student files
+
 	return redirect('/')
 
 app.run(debug=True)

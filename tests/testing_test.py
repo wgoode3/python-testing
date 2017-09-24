@@ -58,12 +58,3 @@ class UserTest(TestCase):
 												"confirm_password": "Test1234"}, follow=True)
 		self.assertContains(res, "New Message")
 		self.assertContains(res, "reimu")
-
-	def test_failed_import(self):
-		try:
-			from ..message_app import *
-			flag = True
-		except ImportError:
-			flag = False
-
-		self.assertTrue(flag)

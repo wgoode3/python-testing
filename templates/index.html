@@ -2,12 +2,27 @@
 <html>
 <head>
 	<title>File Upload</title>
+	<script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="static/js/loading.js"></script>
 </head>
 <body>
+
 	<h1>Upload a file!</h1>
+
 	<form action='/upload' method='post' enctype='multipart/form-data'>
 		<input type="file" name="file">
 		<input type="submit" value="Upload">
 	</form> 
+
+	{% with output = get_flashed_messages() %}
+		{% if output %}
+			<p>{{ output[0] | safe }}</p>
+		{% endif %}	
+	{% endwith %}
+
+	<div id="animation" style="display:none;">
+		<img src="static/img/loading.gif" alt="loading.gif">
+	</div>
+
 </body>
 </html>
