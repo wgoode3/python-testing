@@ -8,7 +8,7 @@ ALLOWED_EXTENSIONS = set(['zip'])
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.secret_key = 'Could this key be any more secret?'
+app.secret_key = "b7nmhjyuki8 .lo-/';[p0zxscdefr v76yu8'"
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -29,6 +29,22 @@ def upload():
     fileSearch.recursiveFileToJSON(n)
     t = fileSearch.testProjects()
     flash(t)
+
+    # let's try parsing the resonse
+
+    if t == "tests not run":
+        print "cannot find tests for the given upload"
+    else:
+        results = t.split("\n")
+        results = [r for r in results if len(r) > 0]
+
+        tests = []
+        for result in results[0]:
+            tests.append(result == ".")
+
+        print tests
+
+    # need to associate this boolean array with the validations that need to be passed
 
     # save these results to a db
         # user table -> retrieve the name from their upload

@@ -16,7 +16,7 @@
 
     {% with output = get_flashed_messages() %}
         {% if output %}
-            <p>{{ output[0] | safe }}</p>
+            <pre><p>{{ output[0] }}</p></pre>
         {% endif %} 
     {% endwith %}
 

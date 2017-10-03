@@ -45,6 +45,29 @@ def testProjects():
                 if a["name"] == p:
                     if a["type"] == "fundamentals":
                         print "python fundamentals testing"
+
+                        # copy in the appropriate test file
+                        '''
+                        with open(join(TESTS, a["test"]), 'r') as testFile:
+                            text = testFile.read()
+                            z = open(join(PROJECTS, p), 'w+')
+                            z.write(text)
+                            z.close()
+
+                        os.chdir("projects/{}".format(p))
+
+                        # need to test this
+
+                        try:
+                            cmd = "python {}".format(a["test"])
+                            t = subprocess.check_output(cmd, stderr=subprocess.STDOUT, shell=True)
+                        except subprocess.CalledProcessError as e:
+                            # print "Oops... returncode: {}, output:\n {}".format(e.returncode, e.output)
+                            t = e.output
+
+                        os.chdir("../..")
+                        '''
+
                     elif a["type"] == "oop":
                         print "python oop testing"
                     elif a["type"] == "flask":
@@ -142,7 +165,7 @@ def cleanProjects():
 
 # function to convert all files in the project into a json object
 
-REJECT_SUFFIX = set(["pyc", "sqlite3", "jpg", "jpeg", "png", "gif", "css"])
+REJECT_SUFFIX = set(["pyc", "sqlite3", "jpg", "jpe", "jpeg", "png", "gif", "svg", "css", "ttf", "woff", "woff2", "eot"])
 
 def recursiveFileToJSON(n):
     myjson = ['{\n\t"project": "' + n[2] + '",\n\t"student": {\n\t\t"first_name": "' + n[0] + '",\n\t\t"last_name": "' + n[1] + '"\n\t}']
@@ -162,19 +185,33 @@ def recursiveFileToJSON(n):
 
     def helper(path, relative_path):
         for p in listdir(path):
-            if isdir(join(path, p)):
+            # ignore any .git folers, maybe ignore all folders that start with `.`
+            if isdir(join(path, p)) and not p == ".git":
                 helper(join(path, p), join(relative_path, p))
+
             if isfile(join(path, p)) and allowedFile(p):
                 with open(join(path, p), 'r') as testFile:
-                    text = testFile.read().splitlines()
-                    t = ''.join(text)
                     
-                    # properly escape `"` characters
+                    # split on new lines
+                    t = testFile.read().split("\n")
+                    t = ' '.join(t)
+                    t = t.split("\t")
+                    t = ' '.join(t)
+
+                    # properly escape `"` and `\`characters
+                    # also remove unnecessary whitespace
                     q = ''
+                    prev = ''
                     for l in t:
-                        if l == '"':
+                        if l == '"' or l == "\\":
                             q += "\\"
-                        q += l
+                        if l != " ":
+                            q += l
+                        if l == " " and prev != " ":
+                            q += l
+                        prev = l
+
+                    # add the file as a     
 
                     myjson[0] += ',\n\t"' + join(relative_path, p) + '": {\n'
                     myjson[0] += '\t\t"raw": "' + q + '"\n\t}'

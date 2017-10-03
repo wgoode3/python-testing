@@ -57,4 +57,4 @@ class UserTest(TestCase):
                                                 "password": "Test1234", 
                                                 "confirm_password": "Test1234"}, follow=True)
         self.assertContains(res, "New Message")
-        self.assertContains(res, "reimu")
+        self.assertContains(res, "Reimu")
