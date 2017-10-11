@@ -12,9 +12,30 @@
 <body>
 
     <div class="container">
-        <div class="jumbotron">
-            <h1>Upload a file!</h1>
+        <div class="jumbotron header">
+            <h1>Python Assignment Testing</h1>
         </div>
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                    </button>
+                    <a class="navbar-brand" href="#">Testing</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">Results</a></li>
+                        <li><a href="#">How To</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
         <div class="well file_upload">
             <form action='/upload' method='post' enctype='multipart/form-data'>
                 <div class="form-group">
@@ -23,17 +44,37 @@
                 </div>
                 <input type="submit" value="Upload" class="btn btn-primary">
             </form> 
+            <a href="/clear"><button class="btn btn-danger clear">Clear</button></a>
         </div>
 
         <div id="animation" class="loader">
             <br><img src="static/img/loading.gif" alt="loading.gif">
         </div>
 
-        {% with output = get_flashed_messages() %}
-            {% if output %}
-                <pre class="code">{{ output[0] }}</pre>
-            {% endif %} 
-        {% endwith %}
+        {% if session.output %}
+
+            <table class="tests table table-striped table-hover">
+                <tr>
+                    <th>Test Name</th>
+                    <th>Test Result</th>
+                </tr>
+                {% for test in session.output.tests %}
+                    <tr>
+                        <td>{{ test.name }}</td>
+                        {% if test.result %}
+                            <td>Passed</td>
+                        {% else %}
+                            <td>Failed</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </table>
+
+            <pre class="code">{{ session.output.raw }}</pre>
+        
+        {% endif %}
+
+
     </div>
 
 </body>

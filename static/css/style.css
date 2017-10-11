@@ -12,4 +12,19 @@
 }
 .loader {
 	display: none;
+	text-align: center;
+}
+
+.jumbotron, .navbar, .well, .btn, input, pre {
+	border-radius: 0px !important;
+}
+
+.header {
+	margin-bottom: 0px !important;
+}
+
+.clear {
+	float: right;
+	position: relative;
+	bottom: 35px;
 }
