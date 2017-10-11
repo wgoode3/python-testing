@@ -288,7 +288,14 @@
         {
             "name": "testing",
             "type": "django",
-            "test": "testing_test.py"
+            "test": "testing_test.py",
+            "tests": [
+                "login page exists",
+                "registration validation errors are displayed",
+                "login validation errors are displayed",
+                "user can successfully login",
+                "user can successfully register"
+            ]
         }
     ]
 }

@@ -2,26 +2,38 @@
 <html>
 <head>
     <title>File Upload</title>
-    <script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="static/js/loading.js"></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/loading.js') }}"></script>
 </head>
 <body>
 
-    <h1>Upload a file!</h1>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Upload a file!</h1>
+        </div>
+        <div class="well file_upload">
+            <form action='/upload' method='post' enctype='multipart/form-data'>
+                <div class="form-group">
+                    <label for="file">File</label>
+                    <input type="file" name="file" id="file">
+                </div>
+                <input type="submit" value="Upload" class="btn btn-primary">
+            </form> 
+        </div>
 
-    <form action='/upload' method='post' enctype='multipart/form-data'>
-        <input type="file" name="file">
-        <input type="submit" value="Upload">
-    </form> 
+        <div id="animation" class="loader">
+            <br><img src="static/img/loading.gif" alt="loading.gif">
+        </div>
 
-    {% with output = get_flashed_messages() %}
-        {% if output %}
-            <pre><p>{{ output[0] }}</p></pre>
-        {% endif %} 
-    {% endwith %}
-
-    <div id="animation" style="display:none;">
-        <img src="static/img/loading.gif" alt="loading.gif">
+        {% with output = get_flashed_messages() %}
+            {% if output %}
+                <pre class="code">{{ output[0] }}</pre>
+            {% endif %} 
+        {% endwith %}
     </div>
 
 </body>
