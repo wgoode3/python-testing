@@ -43,6 +43,14 @@ def testProjects():
         if(isdir(join(PROJECTS, p))):
             for a in ASSIGNMENTS["assignments"]:
                 if a["name"] == p:
+                    
+                    # print "*"*100
+                    # print a["name"]
+                    # print p
+                    # print "*"*100
+
+                    # server will crash if the test file does not exist
+
                     if a["type"] == "fundamentals":
                         print "python fundamentals testing"
 
@@ -88,11 +96,14 @@ def testProjects():
                                         app_not_found = False
 
                                         # open the file with the tests
-                                        with open(join(TESTS, a["test"]), 'r') as testFile:
-                                            text = testFile.read()
-                                            testTarget = open(join(PROJECTS, p, 'apps', f, "tests.py"), 'w')
-                                            testTarget.write(text)
-                                            testTarget.close()
+                                        try:
+                                            with open(join(TESTS, a["test"]), 'r') as testFile:
+                                                text = testFile.read()
+                                                testTarget = open(join(PROJECTS, p, 'apps', f, "tests.py"), 'w')
+                                                testTarget.write(text)
+                                                testTarget.close()
+                                        except IOError:
+                                            print "cannot find the test for", p
 
                             # make the manage.py in the downloaded file executable
                             os.system("chmod +x projects/{}/manage.py".format(p))

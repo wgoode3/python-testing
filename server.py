@@ -40,22 +40,26 @@ def upload():
     fileSearch.recursiveFileToJSON(n)
     output["raw"] = fileSearch.testProjects()
 
-    if output["raw"] != "tests not run":
+    try:
+        if output["raw"] != "tests not run":
 
-        for a in ASSIGNMENTS["assignments"]:
-            
-            results = output["raw"].split("\n")[0]
+            for a in ASSIGNMENTS["assignments"]:
+                
+                results = output["raw"].split("\n")[0]
 
-            if a["name"] == n[2]:
-                print "we found", n[2]
-                print a["tests"]
 
-                count = 0
-                for test in a["tests"]:
-                    output["tests"].append({"name": test, "result": results[count] == "."})
-                    count += 1
+                if a["name"] == n[2]:
+                    print "we found", n[2]
+                    print a["tests"]
 
-    session["output"] = output
+                    count = 0
+                    for test in a["tests"]:
+                        output["tests"].append({"name": test, "result": results[count] == "."})
+                        count += 1
+
+        session["output"] = output
+    except KeyError:
+        print "tests not found for", n[2]
 
     # save these results to a db
         # user table -> retrieve the name from their upload

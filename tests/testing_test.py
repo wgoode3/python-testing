@@ -9,7 +9,7 @@ class UserTest(TestCase):
                                         "confirm_password": "Test1234"})
 
     def test_login_page_exists(self):
-        res = self.client.get("/a")
+        res = self.client.get("/")
         self.assertContains(res, "Welcome to Messages")
 
     def test_register_with_errors(self):
