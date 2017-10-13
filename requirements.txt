@@ -3,10 +3,12 @@ cffi==1.11.0
 click==6.7
 Django==1.11.5
 Flask==0.12.2
+Flask-PyMongo==0.5.1
 itsdangerous==0.24
 Jinja2==2.9.6
 MarkupSafe==1.0
 pycparser==2.18
+pymongo==3.5.1
 pytz==2017.2
 six==1.11.0
 Werkzeug==0.12.2
