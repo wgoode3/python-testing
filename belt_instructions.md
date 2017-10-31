@@ -50,10 +50,8 @@ You must use the following names in your form inputs and display the following v
 
 * email
 
-   Email is required!
-
-   Invalid email!
-
+   Email is required!<br>
+   Invalid email!<br>
    Email already in use!	
 
 * password
@@ -66,22 +64,18 @@ You must use the following names in your form inputs and display the following v
 
 * date_of_birth
 
-   Date of Birth is required!
-
+   Date of Birth is required!<br>
    Date of Birth must be in the past!
 
 ### Login Form
 
 * email
 
-   Email is required!
-
-   Invalid email!
-
+   Email is required!<br>
+   Invalid email!<br>
    Email not found!
 
 * password
 
-   Password must be 8 characters or longer!
-   
+   Password must be 8 characters or longer!<br>
    Incorrect Password
