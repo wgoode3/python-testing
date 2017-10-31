@@ -3,7 +3,7 @@
 First I need a grading scheme to implement
 
 | Error Description                                   | Point Deduction              |
-|:---------------------------------------------------:|:----------------------------:|
+|-----------------------------------------------------|------------------------------|
 | route doesn't exist                                 | .5 or .25                    |
 | can save but no validations                         | .25                          |
 | missing validation message                          | .1 per message (caps to .25) |
@@ -25,7 +25,7 @@ First I need a grading scheme to implement
 You must use the following routes
 
 | Verb | Route              | Description                                                                                            |
-|:----:|:------------------:|:------------------------------------------------------------------------------------------------------:|
+|------|--------------------|--------------------------------------------------------------------------------------------------------|
 | Get  | "/"                | display a page containing the registration and login forms                                             |
 | Post | "/register"        | allow the user to create a new account, redirects to "/" if errors or "/friends" if successful         |
 | Post | "/login"           | allow the user to login to an existing account, redirects to "/" if errors or "/friends" if successful |
@@ -41,27 +41,41 @@ You must use the following names in your form inputs and display the following v
 ### Registration Form
 
 * name
+
 ...Name must be 3 characters or longer!
+
 * alias
+
 ...Alias must be 3 characters or longer!
+
 * email
+
 ...Email is required!
 ...Invalid email!
 ...Email already in use!	
+
 * password
+
 ...Password must be 8 characters or longer!
+
 * confirm_password
+
 ...Confirm Password must match Password!
+
 * date_of_birth
+
 ...Date of Birth is required!
 ...Date of Birth must be in the past!
 
 ### Login Form
 
 *email
+
 ...Email is required!
 ...Invalid email!
 ...Email not found!
+
 *password
+
 ...Password must be 8 characters or longer!
 ...Incorrect Password
