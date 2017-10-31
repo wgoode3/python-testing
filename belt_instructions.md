@@ -42,40 +42,40 @@ You must use the following names in your form inputs and display the following v
 
 1. name
 
-...Name must be 3 characters or longer!
+⋅⋅⋅Name must be 3 characters or longer!
 
 2. alias
 
-...Alias must be 3 characters or longer!
+⋅⋅⋅Alias must be 3 characters or longer!
 
 3. email
 
-...Email is required!
-...Invalid email!
-...Email already in use!	
+⋅⋅⋅Email is required!
+⋅⋅⋅Invalid email!
+⋅⋅⋅Email already in use!	
 
 4. password
 
-...Password must be 8 characters or longer!
+⋅⋅⋅Password must be 8 characters or longer!
 
 5. confirm_password
 
-...Confirm Password must match Password!
+⋅⋅⋅Confirm Password must match Password!
 
 6. date_of_birth
 
-...Date of Birth is required!
-...Date of Birth must be in the past!
+⋅⋅⋅Date of Birth is required!
+⋅⋅⋅Date of Birth must be in the past!
 
 ### Login Form
 
 1. email
 
-...Email is required!
-...Invalid email!
-...Email not found!
+⋅⋅⋅Email is required!
+⋅⋅⋅Invalid email!
+⋅⋅⋅Email not found!
 
 2. password
 
-...Password must be 8 characters or longer!
-...Incorrect Password
+⋅⋅⋅Password must be 8 characters or longer!
+⋅⋅⋅Incorrect Password
