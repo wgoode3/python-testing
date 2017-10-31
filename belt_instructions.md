@@ -152,3 +152,164 @@ You must use the following names in your form inputs and display the following v
 * message
 
    Message must be 10 characters or longer!
+
+# Option C Travel Buddy
+
+## Routes:
+You must use the following routes
+
+| Verb | Route                    | Description                                                                                             |
+|------|--------------------------|---------------------------------------------------------------------------------------------------------|
+| Get  | "/"                      | display a page containing the registration and login forms                                              |
+| Post | "/register"              | allow the user to create a new account, redirects to "/" if errors or "/travels" if successful          |
+| Post | "/login"                 | allow the user to login to an existing account, redirects to "/" if errors or "/travels" if successful  |
+| Get  | "/logout"                | remove the user from session and redirect the user to "/"                                               |
+| Get  | "/travels"               | welcome the user, contain a table of user's trips, and a table of all other trips                       |
+| Get  | "/travels/add"           | show a form to create a new trip                                                                        |
+| Post | "/add_trip"              | allow the user to create a trip or display validation errors and redirect back to "/travels/add"        |
+| Get  | "/user/6"                | show the profile of the user with an id=6                                                               |
+| Post | "/travels/destination/6" | show trip with the id=6                                                                                 |
+| Post | "/travels/join/6"        | add the logged in user to the trip with id-6                                                            |
+
+## Form inputs and validation errors
+You must use the following names in your form inputs and display the following validation errors
+
+### Registration Form:
+
+* name
+
+   Name must be 3 characters or longer!
+
+* username
+
+   Username must be 3 characters or longer!<br>
+   Username already in use!
+
+* password
+
+   Password must be 8 characters or longer!
+
+* confirm_password
+
+   Confirm Password must match Password!
+
+### Login Form
+
+* username
+
+   Username is required!<br>
+   Email not found!
+
+* password
+
+   Password must be 8 characters or longer!<br>
+   Incorrect Password
+
+### Add Trip Form
+
+* destination
+   
+   Quote must be 3 characters or longer!
+
+* description
+   
+   Message must be 10 characters or longer!
+
+* start_date
+   
+   Start Date must be in the future"
+
+* end_date
+
+   End Date must be in the future<br>  
+   End Date must be after Start Date
+
+# Option D Appointments
+
+## Routes:
+You must use the following routes
+
+| Verb | Route                    | Description                                                                                                                         |
+|------|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| Get  | "/"                      | display a page containing the registration and login forms                                                                          |
+| Post | "/register"              | allow the user to create a new account, redirects to "/" if errors or "/travels" if successful                                      |
+| Post | "/login"                 | allow the user to login to an existing account, redirects to "/" if errors or "/travels" if successful                              |
+| Get  | "/logout"                | remove the user from session and redirect the user to "/"                                                                           |
+| Get  | "/appointments"          | welcome the user, contain a table of the day's appointments, contain a table of the all other appointments, and an appointment form |
+| Post | "/add_appointment"       | allow the user to create an appointment or display validation errors and redirect back to "/appointments"                           |
+| Get  | "/appointments/6"        | show a form to edit the appointment with an id=6                                                                                    |
+| Post | "/appointments/6/update" | allow the user to update the appointment with an id=6 or display validation errors and redirect back to "/appointments/6/update"    |
+| Post | "/appointments/6/delete" | allow the user to delete the appointment with an id=6                                                                               |
+
+## Form inputs and validation errors
+You must use the following names in your form inputs and display the following validation errors
+
+### Registration Form:
+
+* name
+
+   Name must be 3 characters or longer!
+
+* username
+
+   Username must be 3 characters or longer!<br>
+   Username already in use!
+
+* password
+
+   Password must be 8 characters or longer!
+
+* confirm_password
+
+   Confirm Password must match Password!
+
+* date_of_birth
+
+   "Date of Birth is required!"<br>
+   "Date of Birth must be in the past!"
+
+### Login Form
+
+* username
+
+   Username is required!<br>
+   Email not found!
+
+* password
+
+   Password must be 8 characters or longer!<br>
+   Incorrect Password
+
+### Add Appointment Form
+
+* date
+   
+   Date is required!<br>
+   Date must be in the future!
+
+* time
+   
+   Time is required!<br>
+   Appointment with this date and time already exists!
+
+* task
+
+   Task is required!
+
+### Edit Appointment Form	
+	
+* date
+   
+   Date is required!<br>
+   Date must be in the future!
+
+* time
+   
+   Time is required!<br>
+   Appointment with this date and time already exists!
+
+* task
+
+   Task is required!
+
+*status
