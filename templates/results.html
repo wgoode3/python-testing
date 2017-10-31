@@ -35,7 +35,7 @@
             <legend>Mongo Test Data</legend>
             <ul>
                 {% for result in results %}
-                    <li>{{ result }} <a href="/delete/{{ result._id }}">X</a></li>
+                    <li>{{ result }} <a href="/delete/{{ result._id }}"><span class="label label-danger">Delete</span></a></li>
                 {% endfor %}
             </ul>
         </fieldset>

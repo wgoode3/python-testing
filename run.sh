@@ -12,6 +12,14 @@ if [ ! -d jsons ]; then
   mkdir jsons
 fi
 
+# open the browser to http://localhost:5001
+
+if which xdg-open > /dev/null; then
+  xdg-open 'http://localhost:5001/'
+else
+  echo "Could not detect the web browser to use."
+fi
+
 # If the virtual environment exists activate it,
 # run the server
 

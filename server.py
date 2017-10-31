@@ -97,4 +97,4 @@ def delete(_id):
     mongo.db.results.remove({"_id": bson.objectid.ObjectId(_id)})
     return redirect('/results')
 
-app.run(debug=True)
+app.run(port=5001, debug=True)

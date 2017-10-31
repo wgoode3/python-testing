@@ -1,6 +1,7 @@
 .file_upload {
 	padding: 20px;
 }
+
 .code {
 	font-size: 1.2em;
 	/*font-family: "Comic Sans MS", cursive, sans-serif;*/
@@ -10,12 +11,17 @@
 	padding: 20px;
 	overflow: auto;
 }
+
+.table {
+	font-size: 1.2em;
+}
+
 .loader {
 	display: none;
 	text-align: center;
 }
 
-.jumbotron, .navbar, .well, .btn, input, pre {
+.jumbotron, .navbar, .well, .btn, .label, input, pre {
 	border-radius: 0px !important;
 }
 
