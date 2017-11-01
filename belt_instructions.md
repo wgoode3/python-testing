@@ -209,18 +209,20 @@ You must use the following names in your form inputs and display the following v
 
 * destination
    
-   Quote must be 3 characters or longer!
+   Destination is required!
 
 * description
    
-   Message must be 10 characters or longer!
+   Description is required!
 
 * start_date
    
+   Start Date is required!<br>
    Start Date must be in the future!
 
 * end_date
 
+   End Date is required!<br>
    End Date must be in the future!<br>  
    End Date must be after Start Date!
 

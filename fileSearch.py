@@ -80,7 +80,7 @@ def testProjects():
                         print "python oop testing"
                     elif a["type"] == "flask":
                         print "python flask testing"
-                    elif a["type"] == "django":
+                    elif a["type"] == "django" or a["type"] == "belt_exam":
                         # print "python django testing"
 
                         if(isdir(join(PROJECTS, p, 'apps'))):
