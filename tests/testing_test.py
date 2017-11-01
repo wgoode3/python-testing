@@ -8,11 +8,11 @@ class UserTest(TestCase):
                                         "password": "Test1234", 
                                         "confirm_password": "Test1234"})
 
-    def test_login_page_exists(self):
-        res = self.client.get("/a")
+    def test_01_login_page_exists(self):
+        res = self.client.get("/")
         self.assertContains(res, "Welcome to Messages")
 
-    def test_register_with_errors(self):
+    def test_02_register_with_errors(self):
         res = self.client.post("/register", {   "username": "", 
                                                 "email": "", 
                                                 "password": "", 
@@ -30,7 +30,7 @@ class UserTest(TestCase):
         self.assertContains(res, "Password must contain at least 1 number and capitalization!")
         self.assertContains(res, "Password must match Confirm password!")
 
-    def test_login_with_errors(self):
+    def test_03_login_with_errors(self):
         res = self.client.post("/login", {  "email": "", 
                                             "password": ""}, follow=True)
         self.assertContains(res, "Email is required!")
@@ -46,12 +46,12 @@ class UserTest(TestCase):
                                             "password": "Abcd1234"}, follow=True)
         self.assertContains(res, "Incorrect Password!")
 
-    def test_successful_login(self):
+    def test_04_successful_login(self):
         res = self.client.post("/login", {  "email": "reimu@hakureishrine.co.jp", 
                                             "password": "Test1234"}, follow=True)
         self.assertContains(res, "New Message")
 
-    def test_successful_register(self):
+    def test_05_successful_register(self):
         res = self.client.post("/register", {   "username": "marisa",
                                                 "email": "marisa@kirisame.co.jp", 
                                                 "password": "Test1234", 

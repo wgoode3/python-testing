@@ -197,8 +197,8 @@ You must use the following names in your form inputs and display the following v
 
 * username
 
-   Username is required!<br>
-   Email not found!
+   Username must be 3 characters or longer!<br>
+   Username not found!
 
 * password
 
