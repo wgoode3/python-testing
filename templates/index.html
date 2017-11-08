@@ -53,24 +53,34 @@
 
         {% if session.output %}
 
-            <table class="tests table table-striped table-hover">
-                <tr>
-                    <th>Test Name</th>
-                    <th>Test Result</th>
-                </tr>
-                {% for test in session.output.tests %}
-                    <tr>
-                        <td>{{ test.name }}</td>
-                        {% if test.result %}
-                            <td><span class="label label-success">Passed</span></td>
-                        {% else %}
-                            <td><span class="label label-danger">Failed</span></td>
-                        {% endif %}
-                    </tr>
-                {% endfor %}
-            </table>
+            <div class="well">
 
-            <pre class="code">{{ session.output.raw }}</pre>
+                <button id="debug" class="btn btn-danger">Debug</button>
+
+                <div class="debug">
+
+                    <table class="tests table table-striped table-hover">
+                        <tr>
+                            <th>Test Name</th>
+                            <th>Test Result</th>
+                        </tr>
+                        {% for test in session.output.tests %}
+                            <tr>
+                                <td>{{ test.name }}</td>
+                                {% if test.result %}
+                                    <td><span class="label label-success">Passed</span></td>
+                                {% else %}
+                                    <td><span class="label label-danger">Failed</span></td>
+                                {% endif %}
+                            </tr>
+                        {% endfor %}
+                    </table>
+
+                    <pre class="code">{{ session.output.raw }}</pre>
+
+                </div>
+
+            </div>
         
         {% endif %}
 

@@ -125,47 +125,9 @@ def testProjects():
     # return the output from testing
     cleanProjects()
     return t
-    # consider rewriting into an object
-    """
-    {
-        "student": {
-            "first": "Example",
-            "last": "Name"
-        },
-        "assignment": "Test Assignment",
-        "optional": True,
-        "passed": True,
-        "tests": [
-            {
-                "name": "test_login_screen_exists",
-                "passed": True,
-                "error": ""
-            },
-            {
-                "name": "test_register_validations",
-                "passed": "True",
-                "error": ""
-            },
-            {
-                "name": "test_login_validations",
-                "passed": True,
-                "error": ""
-            },
-            {
-                "name": "test_successful_login",
-                "passed": True,
-                "error": ""
-            },
-            {
-                "name": "test_successful_register",
-                "passed": True,
-                "error": ""
-            }
-        ]
-    }
-    """
 
 # removes all files and folders from the projects folder
+
 def cleanProjects():
     for thing in listdir(PROJECTS):
         path_to_thing = join(PROJECTS, thing)
@@ -233,3 +195,28 @@ def recursiveFileToJSON(n):
     z = open(join(JSONS, filename), 'w+')
     z.write(myjson[0])
     z.close()
+
+
+# there may be errors when grading Appointments at around 12:00 PM UTC
+# could fix by modifying the settings.py if time close to midnight...
+
+def beltgrade(testname, output):
+    print testname, output
+
+    results = {
+        "total": 0,
+        "passed": 0,
+        "failed": 0,
+        "errored": 0,
+        "tests": []
+    }
+
+    # a way to get test names from out of my test files
+
+    bt = __import__(testname).BeltTest
+    tests = [test for test in dir(bt) if test.startswith('test')]
+    for test in tests:
+        test = test.split("_")
+        print " ".join(test[2:len(test)])
+
+    return results

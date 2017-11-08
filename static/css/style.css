@@ -39,3 +39,8 @@
 	position: relative;
 	bottom: 15px;
 }
+
+.debug {
+	display: none;
+	margin-top: 10px;
+}

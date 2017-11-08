@@ -69,18 +69,14 @@ def upload():
             except KeyError:
                 print "tests not found for", n[2]
 
-    # save these results to a db
-        # user table -> retrieve the name from their upload
-        # assignment table -> store information about the specific test
-        # user_assignments -> record of student's assignment uploads
-            # make it store what features the assignment passes
-
     return redirect('/')
 
 @app.route('/clear')
 def clear():
     session.clear()
     return redirect('/')
+
+# just some test routes for using a mongo database
 
 @app.route('/results', methods=["GET", "POST"])
 def results():
@@ -90,7 +86,7 @@ def results():
         val["bool"] = True
         mongo.db.results.insert(val)
         return redirect('/results')
-    return render_template("results.html", results=[r for r in mongo.db.results.find()])
+    return render_template("results.html", results=mongo.db.results.find())
 
 @app.route('/delete/<_id>')
 def delete(_id):

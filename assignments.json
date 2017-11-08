@@ -368,6 +368,51 @@
                 "logout: redirects",
                 "logout: clears session"
             ]
+        },
+        {
+            "name": "travel_buddy",
+            "type": "belt_exam",
+            "test": "travel_buddy_test.py",
+            "tests": [
+                "login: login page exists",
+                "login: username required",
+                "login: username exists",
+                "login: password minimum length",
+                "login: incorrect password",
+                "login: successful login",
+                "login: redirects to /travels",
+                "register: name minimum length",
+                "register: username required",
+                "register: username unique",
+                "register: password minimum length",
+                "register: confirm password and password match",
+                "register: successful register",
+                "register: redirects to /travels",
+                "travels: initializes no joined trips",
+                "travels: initializes no other trips",
+                "add: travels add page exists",
+                "add: destination required",
+                "add: description required",
+                "add: start date required",
+                "add: end date required",
+                "add: start date in future",
+                "add: end date in future",
+                "add: end date after start date",
+                "add: add trip successfully",
+                "add: successful add trip redirects to /travels",
+                "travels: user autojoins their trip",
+                "travels: other user has not yet joined trip",
+                "travels: other user can join trip",
+                "destination: destination page exists",
+                "destination: destination page has destination",
+                "destination: destination page has description",
+                "destination: destination page has planner",
+                "destination: destination page no other users joined",
+                "destination: destination page joined user in other users going",
+                "logout: returns to login page",
+                "logout: redirects",
+                "logout: clears session"
+            ]
         }
     ]
 }

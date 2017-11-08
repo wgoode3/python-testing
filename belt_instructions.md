@@ -314,7 +314,7 @@ You must use the following names in your form inputs and display the following v
 
    Task is required!
 
-*status
+* status
 
 # Option E Pokes
 
