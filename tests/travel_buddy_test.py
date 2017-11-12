@@ -1,12 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
 from django.test import TestCase
-
 from datetime import datetime, timedelta
 
 # generate start and end dates that will always be in the future
-
 START_DATE = datetime.strftime(datetime.now() + timedelta(days=1), "%Y-%m-%d")
 END_DATE = datetime.strftime(datetime.now() + timedelta(days=2), "%Y-%m-%d")
 
@@ -238,23 +235,22 @@ class BeltTest(TestCase):
 
     # Start and End date testing are a bit problematic
     # there are too many ways to display a valid date, I don't want to check them all
-    """
-    def test_33_destination_page_has_start_date(self):
-        self.client.post("/add_trip", { "destination": "Gensokyo",
-                                        "description": "Visit the Hakurei Shrine",
-                                        "start_date": START_DATE, 
-                                        "end_date": END_DATE})
-        res = self.client.get("/travels/destination/1", follow=True)
-        self.assertContains(res, START_DATE)
 
-    def test_34_destination_page_has_end_date(self):
-        self.client.post("/add_trip", { "destination": "Gensokyo",
-                                        "description": "Visit the Hakurei Shrine",
-                                        "start_date": START_DATE, 
-                                        "end_date": END_DATE})
-        res = self.client.get("/travels/destination/1", follow=True)
-        self.assertContains(res, END_DATE)
-    """
+    # def test_33_destination_page_has_start_date(self):
+    #     self.client.post("/add_trip", { "destination": "Gensokyo",
+    #                                     "description": "Visit the Hakurei Shrine",
+    #                                     "start_date": START_DATE, 
+    #                                     "end_date": END_DATE})
+    #     res = self.client.get("/travels/destination/1", follow=True)
+    #     self.assertContains(res, START_DATE)
+
+    # def test_34_destination_page_has_end_date(self):
+    #     self.client.post("/add_trip", { "destination": "Gensokyo",
+    #                                     "description": "Visit the Hakurei Shrine",
+    #                                     "start_date": START_DATE, 
+    #                                     "end_date": END_DATE})
+    #     res = self.client.get("/travels/destination/1", follow=True)
+    #     self.assertContains(res, END_DATE)
 
     def test_33_destination_page_has_planner(self):
         self.client.post("/add_trip", { "destination": "Gensokyo",

@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
 from django.test import TestCase
+from datetime import datetime, timedelta
+
+# generate a future date to test date of birth validity
+FUTURE_DATE = datetime.strftime(datetime.now() + timedelta(days=1), "%Y-%m-%d")
 
 class BeltTest(TestCase):
 
@@ -132,8 +135,7 @@ class BeltTest(TestCase):
                                         "email": "test@test.com", 
                                         "password": "Test1234", 
                                         "confirm_password": "Test1234",
-                                        "date_of_birth": "2200-01-01"}, follow=True)
-        # I hope no one is using this in the year 2200!
+                                        "date_of_birth": FUTURE_DATE}, follow=True)
         self.assertContains(res, "Date of Birth must be in the past!")
         
     def test_18_successful_register(self):

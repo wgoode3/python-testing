@@ -4,16 +4,11 @@
 
 .code {
 	font-size: 1.2em;
-	/*font-family: "Comic Sans MS", cursive, sans-serif;*/
 	font-family: "Lucida Console", Monaco, monospace;
 	background-color: #000;
 	color: #3f3;
 	padding: 20px;
 	overflow: auto;
-}
-
-.table {
-	font-size: 1.2em;
 }
 
 .loader {
@@ -43,4 +38,8 @@
 .debug {
 	display: none;
 	margin-top: 10px;
+}
+
+.clearfix {
+	overflow: auto;
 }

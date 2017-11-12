@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-class UserTest(TestCase):
+class BeltTest(TestCase):
 
     def setUp(self):
         self.client.post("/register", { "username": "reimu",

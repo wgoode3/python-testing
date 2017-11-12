@@ -51,14 +51,17 @@
             <br><img src="static/img/loading.gif" alt="loading.gif">
         </div>
 
-        {% if session.output %}
+        {% if session %}
 
             <div class="well">
+                <p>Total: {{ session.output.total }}</p>
+                <p>Passed: {{ session.output.passed }}</p>
+                <p>Failed: {{ session.output.failed }}</p>
+                <p>Errored: {{ session.output.errored }}</p>
+            </div>
 
-                <button id="debug" class="btn btn-danger">Debug</button>
-
+            <div class="well clearfix">
                 <div class="debug">
-
                     <table class="tests table table-striped table-hover">
                         <tr>
                             <th>Test Name</th>
@@ -67,23 +70,26 @@
                         {% for test in session.output.tests %}
                             <tr>
                                 <td>{{ test.name }}</td>
-                                {% if test.result %}
-                                    <td><span class="label label-success">Passed</span></td>
-                                {% else %}
-                                    <td><span class="label label-danger">Failed</span></td>
-                                {% endif %}
+                                <td>
+                                    {% if test.outcome == "Passed" %}
+                                        <span class="label label-success">{{ test.outcome }}</span>
+                                    {% elif test.outcome == "Failed" %}
+                                        <span class="label label-danger">{{ test.outcome }}</span>
+                                    {% elif test.outcome == "Errored" %}
+                                        <span class="label label-warning">{{ test.outcome }}</span>
+                                    {% endif %}
+                                </td>
                             </tr>
                         {% endfor %}
                     </table>
-
                     <pre class="code">{{ session.output.raw }}</pre>
-
                 </div>
+
+                <button id="debug" class="btn btn-danger pull-right">Debug</button>
 
             </div>
         
         {% endif %}
-
 
     </div>
 
