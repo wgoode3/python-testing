@@ -12,10 +12,16 @@
 <body>
 
     <div class="container">
+
+        <!-- website greeting -->
         <div class="jumbotron header">
-            <h1><img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo"> Python Assignment Testing</h1>
+            <h1>
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo"> 
+                Python Assignment Testing
+            </h1>
         </div>
 
+        <!-- website navigation -->
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -28,23 +34,36 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="">Home</a></li>
-                        <li><a href="/results">Results</a></li>
-                        <li><a href="">How To</a></li>
+                        <li class="active"><a href="">
+                            <span class="glyphicon glyphicon-home"></span> Home
+                        </a></li>
+                        <li><a href="/results"> 
+                            <span class="glyphicon glyphicon-stats"></span> Results
+                        </a></li>
+                        <li><a href="">
+                            <span class="glyphicon glyphicon-info-sign"></span> How To
+                        </a></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
+        <!-- upload form -->
         <div class="well file_upload">
             <form action='/upload' method='post' enctype='multipart/form-data'>
                 <div class="form-group">
                     <label for="file">File</label>
                     <input type="file" name="file" id="file">
                 </div>
-                <input type="submit" value="Upload" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-download-alt"></span> Upload
+                </button>
             </form> 
-            <a href="/clear"><button class="btn btn-danger clear">Clear</button></a>
+            <a href="/clear">
+                <button class="btn btn-danger clear">
+                    <span class="glyphicon glyphicon-remove-sign"></span> Clear
+                </button>
+            </a>
         </div>
 
         <div id="animation" class="loader">
@@ -52,43 +71,72 @@
         </div>
 
         {% if session %}
-
-            <div class="well">
-                <p>Total: {{ session.output.total }}</p>
-                <p>Passed: {{ session.output.passed }}</p>
-                <p>Failed: {{ session.output.failed }}</p>
-                <p>Errored: {{ session.output.errored }}</p>
-            </div>
-
-            <div class="well clearfix">
-                <div class="debug">
-                    <table class="tests table table-striped table-hover">
-                        <tr>
-                            <th>Test Name</th>
-                            <th>Test Result</th>
-                        </tr>
-                        {% for test in session.output.tests %}
-                            <tr>
-                                <td>{{ test.name }}</td>
-                                <td>
-                                    {% if test.outcome == "Passed" %}
-                                        <span class="label label-success">{{ test.outcome }}</span>
-                                    {% elif test.outcome == "Failed" %}
-                                        <span class="label label-danger">{{ test.outcome }}</span>
-                                    {% elif test.outcome == "Errored" %}
-                                        <span class="label label-warning">{{ test.outcome }}</span>
-                                    {% endif %}
-                                </td>
-                            </tr>
-                        {% endfor %}
-                    </table>
-                    <pre class="code">{{ session.output.raw }}</pre>
+            <div class="results">
+                
+                <!-- test results -->
+                <div class="well clearfix">
+                    <h4 class="col-sm-3">
+                        <span class="glyphicon glyphicon-list-alt"></span> 
+                        Total: {{ session.output.total }}
+                    </h4>
+                    <h4 class="col-sm-3">
+                        <span class="glyphicon glyphicon-ok"></span> 
+                        Passed: {{ session.output.passed }}
+                    </h4>                        
+                    <h4 class="col-sm-3">
+                        <span class="glyphicon glyphicon-remove"></span> 
+                        Failed: {{ session.output.failed }}
+                    </h4>
+                    <h4 class="col-sm-3">
+                        <span class="glyphicon glyphicon-warning-sign"></span> 
+                        Errored: {{ session.output.errored }}
+                    </h4>
                 </div>
 
-                <button id="debug" class="btn btn-danger pull-right">Debug</button>
+                <div class="well clearfix">
+                    <h3><span class="glyphicon glyphicon-wrench"></span> Debug</h3>
 
+                    <!-- test details -->
+                    <div class="debug">
+                        <table class="tests table table-striped table-hover">
+                            <tr>
+                                <th>Test Name</th>
+                                <th>Test Result</th>
+                            </tr>
+                            {% for test in session.output.tests %}
+                                <tr>
+                                    <td>{{ test.name }}</td>
+                                    <td>
+                                        {% if test.outcome == "Passed" %}
+                                            <span class="label label-success">
+                                                {{ test.outcome }} 
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </span>
+                                        {% elif test.outcome == "Failed" %}
+                                            <span class="label label-danger">
+                                                {{ test.outcome }} 
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </span>
+                                        {% elif test.outcome == "Errored" %}
+                                            <span class="label label-warning">
+                                                {{ test.outcome }} 
+                                                <span class="glyphicon glyphicon-warning-sign"></span>
+                                            </span>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+
+                        <!-- simulated terminal -->
+                        <pre class="code">{{ session.output.raw }}</pre>
+
+                    </div>
+
+                    <button id="show" class="btn btn-danger pull-right">Show</button>
+
+                </div>
             </div>
-        
         {% endif %}
 
     </div>

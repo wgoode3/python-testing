@@ -40,6 +40,8 @@
 	margin-top: 10px;
 }
 
-.clearfix {
-	overflow: auto;
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }

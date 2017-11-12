@@ -12,14 +12,13 @@ from os.path import join, dirname, realpath, isfile, isdir
 
 """
 TODO List:
-1) rubric.json - belt grading rules
-2) beltScore   - use rubric to determine belt score
+1) beltScore   - use rubric to determine belt score
 """
 
-UPLOADS = join(dirname(realpath(__file__)), "uploads")
-PROJECTS = join(dirname(realpath(__file__)), "projects")
-TESTS = join(dirname(realpath(__file__)), "tests")
-JSONS = join(dirname(realpath(__file__)), "jsons")
+UPLOADS        = join(dirname(realpath(__file__)), "uploads")
+PROJECTS       = join(dirname(realpath(__file__)), "projects")
+TESTS          = join(dirname(realpath(__file__)), "tests")
+JSONS          = join(dirname(realpath(__file__)), "jsons")
 ACCEPTED_FILES = set(["py", "html"]) # for use with recursiveFileToJSON
 
 with open('assignments.json') as data_file:
@@ -34,11 +33,10 @@ def uploadZipfile(file):
 # removes all files and folders from the specified folder
 def cleanFolder(folder):
     for thing in listdir(folder):
-        path_to_thing = join(folder, thing)
-        if isdir(path_to_thing):
-            shutil.rmtree(path_to_thing)
-        if isfile(path_to_thing):
-            os.remove(path_to_thing)
+        if isdir(join(folder, thing)):
+            shutil.rmtree(join(folder, thing))
+        elif isfile(join(folder, thing)):
+            os.remove(join(folder, thing))
 
 # function to unzip zip files in uploads to projects
 def unzipProjects():
@@ -244,13 +242,14 @@ def score(testname, output):
     try:
         with open(join(TESTS, testname), 'r') as testFile:
             text = testFile.read()
+
+        # parses test method names from the test file
+        functions = [line.lstrip()[4:].split("(")[0] for line in text.split("\n") if line.lstrip()[0:3] == "def"]
+        tests = [" ".join(func.split("_")[2:]) for func in functions if func[0:4] == "test"]
+        results["tests"] = [{"name": test, "outcome": None} for test in tests]
+
     except IOError:
         results["messages"].append("cannot find the test file, {}".format(testname))
-
-    # parses test method names from the test file
-    functions = [line.lstrip()[4:].split("(")[0] for line in text.split("\n") if line.lstrip()[0:3] == "def"]
-    tests = [" ".join(func.split("_")[2:]) for func in functions if func[0:4] == "test"]
-    results["tests"] = [{"name": test, "outcome": None} for test in tests]
 
     # determines if each test passed, failed, or errored
     test_runner = output.split("\n")[0]

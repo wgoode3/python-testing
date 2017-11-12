@@ -1,17 +1,16 @@
 $(document).ready(function(){
 	$("form").submit(function(){
 		$("#animation").show();
-		$(".code").hide();
-		$(".tests").hide();
+		$(".results").hide();
 	});
 
 	// going to make this file do double duty
-	$("#debug").click(function(){
+	$("#show").click(function(){
 		$(".debug").slideToggle();
-		if($("#debug").text() == "Debug"){
-			$("#debug").text("Close");
+		if($("#show").text() == "Show"){
+			$("#show").text("Hide");
 		}else{
-			$("#debug").text("Debug");	
+			$("#show").text("Show");
 		}
-	})
+	});
 });

@@ -306,6 +306,11 @@
             "test": "travel_buddy_test.py"
         },
         {
+            "name": "pokes",
+            "type": "belt_exam",
+            "test": "pokes_test.py"
+        },
+        {
             "name": "appointments",
             "type": "belt_exam",
             "test": "appointments_test.py"
