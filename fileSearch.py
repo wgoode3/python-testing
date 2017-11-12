@@ -6,8 +6,8 @@ import shutil
 import subprocess
 import time
 import hashlib
-from werkzeug.utils import secure_filename
 from os import listdir
+from werkzeug.utils import secure_filename
 from os.path import join, dirname, realpath, isfile, isdir
 
 """
@@ -20,12 +20,10 @@ UPLOADS = join(dirname(realpath(__file__)), "uploads")
 PROJECTS = join(dirname(realpath(__file__)), "projects")
 TESTS = join(dirname(realpath(__file__)), "tests")
 JSONS = join(dirname(realpath(__file__)), "jsons")
+ACCEPTED_FILES = set(["py", "html"]) # for use with recursiveFileToJSON
 
 with open('assignments.json') as data_file:
     ASSIGNMENTS = json.load(data_file)
-
-# for use with recursiveFileToJSON
-ACCEPTED_FILES = set(["py", "html"])
 
 # saves a file in the uploads folder
 def uploadZipfile(file):
@@ -81,16 +79,13 @@ def recursiveFileToJSON():
         else:
             return True
 
-    def helper(path, relative_path):
+    def fileparser(path, relative_path):
         for thing in listdir(path):
-
             # ignore any .git folers, maybe ignore all folders that start with `.`
             if isdir(join(path, thing)) and thing != ".git":
-                helper(join(path, thing), join(relative_path, thing))
-
+                fileparser(join(path, thing), join(relative_path, thing))
             if isfile(join(path, thing)) and allowedFile(thing):
                 with open(join(path, thing), 'r') as testFile:
-
                     # split on new lines and tabs
                     filetext = " ".join(testFile.read().split("\n"))
                     filetext = " ".join(filetext.split("\t"))
@@ -116,7 +111,7 @@ def recursiveFileToJSON():
                     testFile.write("USE_TZ = False")
                     testFile.close()
 
-    helper(PROJECTS, "")
+    fileparser(PROJECTS, "")
     myjson[0] += "\n}"
 
     z = open(join(JSONS, filename), 'w+')

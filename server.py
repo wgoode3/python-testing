@@ -2,14 +2,14 @@
 import os
 import json
 import bson
+import fileSearch
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_pymongo import PyMongo
-import fileSearch
 
-app = Flask(__name__)
+app            = Flask(__name__)
 app.secret_key = "b7nmhjyuki8lop0zxscdefrv76yu8"
-app.name = "py_test" # app.name is the mongod database name
-mongo = PyMongo(app)
+app.name       = "py_test" # app.name is the mongod database name
+mongo          = PyMongo(app)
 
 # route to show the main page
 @app.route('/')
@@ -20,8 +20,7 @@ def index():
 @app.route('/upload', methods=['POST'])
 def upload():
     if request.method == 'POST':
-        file = request.files['file']
-        fileSearch.uploadZipfile(file)
+        fileSearch.uploadZipfile(request.files['file'])
         fileSearch.unzipProjects()
         fileSearch.recursiveFileToJSON()
         session["output"] = fileSearch.testProjects()
@@ -37,10 +36,11 @@ def clear():
 @app.route('/results', methods=["GET", "POST"])
 def results():
     if request.method == "POST":
-        val = {'status': 'ok'}
-        val["tests"] = request.form["thing"]
-        val["bool"] = True
-        mongo.db.results.insert(val)
+        mongo.db.results.insert({
+            "status": "ok",
+            "tests": request.form["thing"],
+            "bool": True
+        })
         return redirect('/results')
     else:
         return render_template("results.html", results=mongo.db.results.find())
