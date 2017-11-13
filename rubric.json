@@ -1,352 +1,352 @@
 {
-	"belts": [
-		{
-			"option": "A",
-			"name": "Friends",
-			"rubric": [
-				{
-					"criteria": "Login with validations",
-					"value": 0.5
-				},
-				{
-					"criteria": "Register with validations",
-					"value": 0.5
-				},
-				{
-					"criteria": "Logout",
-					"value": 0.25
-				},
-				{
-					"criteria": "Dashboard should display list of all friends (top).",
-					"value": 0.5
-				},
-				{
-					"criteria": "Dashboard: Another table for non-friends (below).",
-					"value": 0.5
-				},
-				{
-					"criteria": "Dashboard: Name of the logged user should not appear on the list of Users",
-					"value": 0.25
-				},
-				{
-					"criteria": "View each user's profile with correct information (full name and email)",
-					"value": 0.5
-				},
-				{
-					"criteria": "Ability to add friends. ",
-					"value": 0.5
-				},
-				{
-					"criteria": "Adding of friends: When a user has been added as a friend, the logged user is also added on the newly added user's list of friends.",
-					"value": 0.25
-				},
-				{
-					"criteria": "Ability to remove a friend.",
-					"value": 0.5
-				},
-				{
-					"criteria": "Deleting of friends: When a user has been removed as a friend, the logged user is also removed on the from the other user's list of friends.",
-					"value": 0.25
-				},
-				{
-					"criteria": "Updating of two tables: Should be updating properly when Adding/Removing friends",
-					"value": 0.5
-				},
-				{
-					"criteria": "Dashboard: Displays 'You don't have any friends yet' for newly registered user or users who do not have friends yet",
-					"value": 0.5
-				}
-			]
-		},
-		{
-			"option": "B",
-			"name": "Quotes",
-			"rubric": [
-				{
-					"criteria": "Login with validations",
-					"value": 0.5
-				},
-				{
-					"criteria": "Register with validations",
-					"value": 0.5
-				},
-				{
-					"criteria": "Logout",
-					"value": 0.25
-				},
-				{
-					"criteria": "Display of quotes on Quotable Quotes with the correct information (quotes, quoted by and posted by)",
-					"value": 0.5
-				},
-				{
-					"criteria": "Quotable Quotes: Only the quotes not added to the user's 'Favorites' should appear",
-					"value": 0.5
-				},
-				{
-					"criteria": "Display of Favorite quotes (specific per logged user)",
-					"value": 0.5
-				},
-				{
-					"criteria": "Ability to add a quote to your favorites.",
-					"value": 0.5
-				},
-				{
-					"criteria": "Moving quotes to favorites: The quote should appear on the 'Favorites' table and should be removed from 'Quotable quotes' table",
-					"value": 0.25
-				},
-				{
-					"criteria": "Ability to remove a quote from your favorites.",
-					"value": 0.5
-				},
-				{
-					"criteria": "Deleting of friends: When a user has been removed as a friend, the logged user is also removed on the from the other user's list of friends.",
-					"value": 0.25
-				},
-				{
-					"criteria": "Removing of quote from favorites: The quote will be removed from the 'Favorites' table and will appear on the 'Quotable Quotes' table",
-					"value": 0.25
-				},
-				{
-					"criteria": "Able to add a new quote. Validations apply",
-					"value": 0.5
-				},
-				{
-					"criteria": "Individual user page: displays all the posts of a particular user",
-					"value": 0.5
-				},
-				{
-					"criteria": "Individual user page: Displays the count of posts a user made",
-					"value": 0.25
-				}
-			]
-		},
-		{
-			"option": "C",
-			"name": "Travel Buddy",
-			"rubric": [
-				{
-					"criteria": "Login with validations",
-					"value": 0.5
-				},
-				{
-					"criteria": "Register with validations",
-					"value": 0.5
-				},
-				{
-					"criteria": "Logout",
-					"value": 0.25
-				},
-				{
-					"criteria": "Dashboard page: Displays the logged user's created/joined travel plans",
-					"value": 0.5
-				},
-				{
-					"criteria": "Dashboard page: Displays other users' travel plans that the logged user has not joined yet",
-					"value": 0.5
-				},
-				{
-					"criteria": "Dashboard page: Ability to join other users' travel plans.",
-					"value": 0.5
-				},
-				{
-					"criteria": "Dashboard: Once the logged user joins, the travel plan record should move to the Trip Schedule tables. The said plan will now be removed from Other Users' Travel plan table.",
-					"value": 0.5
-				},
-				{
-					"criteria": "Travel Plan page: Display the plan information: planned by, destination, description, date from and to.",
-					"value": 0.5
-				},
-				{
-					"criteria": "Travel Plan page: List of other users who joined that plan",
-					"value": 0.5
-				},
-				{
-					"criteria": "Travel Plan page: List of other users joining the plan should not include the name of the user who created it.",
-					"value": 0.25
-				},
-				{
-					"criteria": "Ability to add new travel plans with validations on entries. Error mesage should be displayed",
-					"value": 0.5
-				},
-				{
-					"criteria": "Add new travel plan: The plan should be future-dated",
-					"value": 0.25
-				},
-				{
-					"criteria": "The newly added travel plan should appear on logged user's Trip schedule table.",
-					"value": 0.25
-				}
-			]
-		},
-		{
-			"option": "D",
-			"name": "Appointments",
-			"rubric": [
-				{
-					"criteria": "Login with validations",
-					"value": 0.5
-				},
-				{
-					"criteria": "Register with validations",
-					"value": 0.5
-				},
-				{
-					"criteria": "Logout",
-					"value": 0.25
-				},
-				{
-					"criteria": "Table for appointments on current date with complete information (task, time, status). Data is user-specific",
-					"value": 0.5
-				},
-				{
-					"criteria": "Table for appointments: Items are arranged to the recent time to the latter time",
-					"value": 0.25
-				},
-				{
-					"criteria": "Another table for future-dated appointments with complete information as well (task, time and date). Data is user-specific",
-					"value": 0.5
-				},
-				{
-					"criteria": "Table for appointments: There should be no option to Edit/Delete the task once the status is Done",
-					"value": 0.25
-				},
-				{
-					"criteria": "Appointment edit page: Displays the current appoint information: task, time, date and status. User-specific",
-					"value": 0.25
-				},
-				{
-					"criteria": "Appointment Edit page: Ability to edit appointment information including the task, time and appointment name",
-					"value": 0.5
-				},
-				{
-					"criteria": "Appointment Edit page: Validation should be applied for empty strings and past-dated appointments.",
-					"value": 0.25
-				},
-				{
-					"criteria": "Delete an appointment.",
-					"value": 0.5
-				},
-				{
-					"criteria": "Ability to add an appointment. Validation should be applied on empty entries",
-					"value": 0.5
-				},
-				{
-					"criteria": "Adding of appointment: For current and future dates only. Displays error when the date is before the current date",
-					"value": 0.5
-				},
-				{
-					"criteria": "Adding of appointment: No overlap of appointments. Each appointment should have unique time and date",
-					"value": 0.25
-				}
-			]
-		},
-		{
-			"option": "E",
-			"name": "Pokes",
-			"rubric": [
-				{
-					"criteria": "Login with validations",
-					"value": 0.5
-				},
-				{
-					"criteria": "Register with validations",
-					"value": 0.5
-				},
-				{
-					"criteria": "Logout",
-					"value": 0.25
-				},
-				{
-					"criteria": "All user information should be from the database. Have at least 10 sample data",
-					"value": 0.25
-				},
-				{
-					"criteria": "Poke history table: The name of the logged user should not be displayed here",
-					"value": 0.25
-				},
-				{
-					"criteria": "Poke history table: Should display all the users you can poke with their alias and email",
-					"value": 0.5
-				},
-				{
-					"criteria": "Poke history table: Should also have the correct poke counts for each user.",
-					"value": 0.5
-				},
-				{
-					"criteria": "Poke history table: Others should also be able to view the updated poke counts and it should be saved in the database.",
-					"value": 0.5
-				},
-				{
-					"criteria": "Count the number of unique users who poked you. User-specific",
-					"value": 0.5
-				},
-				{
-					"criteria": "List of users who poked you: User-specific",
-					"value": 0.5
-				},
-				{
-					"criteria": "List of users who poked you: Should include the number of times for each user.",
-					"value": 0.5
-				},
-				{
-					"criteria": "List of users who poked you: This list should be in descending order based from the number of pokes.",
-					"value": 0.25
-				}
-			]
-		},
-		{
-			"option": "F",
-			"name": "Wish List",
-			"rubric": [
-				{
-					"criteria": "Login with validations",
-					"value": 0.5
-				},
-				{
-					"criteria": "Register with validations",
-					"value": 0.5
-				},
-				{
-					"criteria": "Logout",
-					"value": 0.25
-				},
-				{
-					"criteria": "Dashboard: Display the logged user's own wish list (created by the user and added on his/her own list)",
-					"value": 0.5
-				},
-				{
-					"criteria": "Dashboard: Another table to display items created by all users but are not on the logged user's wish list",
-					"value": 0.5
-				},
-				{
-					"criteria": "Dashboard: Ability to add items created by other users to your own wish list table",
-					"value": 0.5
-				},
-				{
-					"criteria": "Dashboard: Ability to remove items from your wish list table and return to the other user's wish list.",
-					"value": 0.5
-				},
-				{
-					"criteria": "Dashboard: Ability to permanently delete wish list items the logged user has created.",
-					"value": 0.5
-				},
-				{
-					"criteria": "Ability to add new items. Validation applies.",
-					"value": 0.5
-				},
-				{
-					"criteria": "Once the new item is added, it should be appended on the user's own wish list items table. It should also be appended on the other users' other wish list table when other users log in to their account",
-					"value": 0.5
-				},
-				{
-					"criteria": "Individual item page with the item name",
-					"value": 0.25
-				},
-				{
-					"criteria": "Individual item page: list of all users who has that item on their list.",
-					"value": 0.5
-				}
-			]
-		}
-	]
+    "belts": [
+        {
+            "option": "A",
+            "name": "Friends",
+            "rubric": [
+                {
+                    "criteria": "Login with validations",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Register with validations",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Logout",
+                    "value": 0.25
+                },
+                {
+                    "criteria": "Dashboard should display list of all friends (top).",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Dashboard: Another table for non-friends (below).",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Dashboard: Name of the logged user should not appear on the list of Users",
+                    "value": 0.25
+                },
+                {
+                    "criteria": "View each user's profile with correct information (full name and email)",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Ability to add friends. ",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Adding of friends: When a user has been added as a friend, the logged user is also added on the newly added user's list of friends.",
+                    "value": 0.25
+                },
+                {
+                    "criteria": "Ability to remove a friend.",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Deleting of friends: When a user has been removed as a friend, the logged user is also removed on the from the other user's list of friends.",
+                    "value": 0.25
+                },
+                {
+                    "criteria": "Updating of two tables: Should be updating properly when Adding/Removing friends",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Dashboard: Displays 'You don't have any friends yet' for newly registered user or users who do not have friends yet",
+                    "value": 0.5
+                }
+            ]
+        },
+        {
+            "option": "B",
+            "name": "Quotes",
+            "rubric": [
+                {
+                    "criteria": "Login with validations",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Register with validations",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Logout",
+                    "value": 0.25
+                },
+                {
+                    "criteria": "Display of quotes on Quotable Quotes with the correct information (quotes, quoted by and posted by)",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Quotable Quotes: Only the quotes not added to the user's 'Favorites' should appear",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Display of Favorite quotes (specific per logged user)",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Ability to add a quote to your favorites.",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Moving quotes to favorites: The quote should appear on the 'Favorites' table and should be removed from 'Quotable quotes' table",
+                    "value": 0.25
+                },
+                {
+                    "criteria": "Ability to remove a quote from your favorites.",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Deleting of friends: When a user has been removed as a friend, the logged user is also removed on the from the other user's list of friends.",
+                    "value": 0.25
+                },
+                {
+                    "criteria": "Removing of quote from favorites: The quote will be removed from the 'Favorites' table and will appear on the 'Quotable Quotes' table",
+                    "value": 0.25
+                },
+                {
+                    "criteria": "Able to add a new quote. Validations apply",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Individual user page: displays all the posts of a particular user",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Individual user page: Displays the count of posts a user made",
+                    "value": 0.25
+                }
+            ]
+        },
+        {
+            "option": "C",
+            "name": "Travel Buddy",
+            "rubric": [
+                {
+                    "criteria": "Login with validations",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Register with validations",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Logout",
+                    "value": 0.25
+                },
+                {
+                    "criteria": "Dashboard page: Displays the logged user's created/joined travel plans",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Dashboard page: Displays other users' travel plans that the logged user has not joined yet",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Dashboard page: Ability to join other users' travel plans.",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Dashboard: Once the logged user joins, the travel plan record should move to the Trip Schedule tables. The said plan will now be removed from Other Users' Travel plan table.",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Travel Plan page: Display the plan information: planned by, destination, description, date from and to.",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Travel Plan page: List of other users who joined that plan",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Travel Plan page: List of other users joining the plan should not include the name of the user who created it.",
+                    "value": 0.25
+                },
+                {
+                    "criteria": "Ability to add new travel plans with validations on entries. Error mesage should be displayed",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Add new travel plan: The plan should be future-dated",
+                    "value": 0.25
+                },
+                {
+                    "criteria": "The newly added travel plan should appear on logged user's Trip schedule table.",
+                    "value": 0.25
+                }
+            ]
+        },
+        {
+            "option": "D",
+            "name": "Appointments",
+            "rubric": [
+                {
+                    "criteria": "Login with validations",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Register with validations",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Logout",
+                    "value": 0.25
+                },
+                {
+                    "criteria": "Table for appointments on current date with complete information (task, time, status). Data is user-specific",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Table for appointments: Items are arranged to the recent time to the latter time",
+                    "value": 0.25
+                },
+                {
+                    "criteria": "Another table for future-dated appointments with complete information as well (task, time and date). Data is user-specific",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Table for appointments: There should be no option to Edit/Delete the task once the status is Done",
+                    "value": 0.25
+                },
+                {
+                    "criteria": "Appointment edit page: Displays the current appoint information: task, time, date and status. User-specific",
+                    "value": 0.25
+                },
+                {
+                    "criteria": "Appointment Edit page: Ability to edit appointment information including the task, time and appointment name",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Appointment Edit page: Validation should be applied for empty strings and past-dated appointments.",
+                    "value": 0.25
+                },
+                {
+                    "criteria": "Delete an appointment.",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Ability to add an appointment. Validation should be applied on empty entries",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Adding of appointment: For current and future dates only. Displays error when the date is before the current date",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Adding of appointment: No overlap of appointments. Each appointment should have unique time and date",
+                    "value": 0.25
+                }
+            ]
+        },
+        {
+            "option": "E",
+            "name": "Pokes",
+            "rubric": [
+                {
+                    "criteria": "Login with validations",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Register with validations",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Logout",
+                    "value": 0.25
+                },
+                {
+                    "criteria": "All user information should be from the database. Have at least 10 sample data",
+                    "value": 0.25
+                },
+                {
+                    "criteria": "Poke history table: The name of the logged user should not be displayed here",
+                    "value": 0.25
+                },
+                {
+                    "criteria": "Poke history table: Should display all the users you can poke with their alias and email",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Poke history table: Should also have the correct poke counts for each user.",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Poke history table: Others should also be able to view the updated poke counts and it should be saved in the database.",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Count the number of unique users who poked you. User-specific",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "List of users who poked you: User-specific",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "List of users who poked you: Should include the number of times for each user.",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "List of users who poked you: This list should be in descending order based from the number of pokes.",
+                    "value": 0.25
+                }
+            ]
+        },
+        {
+            "option": "F",
+            "name": "Wish List",
+            "rubric": [
+                {
+                    "criteria": "Login with validations",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Register with validations",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Logout",
+                    "value": 0.25
+                },
+                {
+                    "criteria": "Dashboard: Display the logged user's own wish list (created by the user and added on his/her own list)",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Dashboard: Another table to display items created by all users but are not on the logged user's wish list",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Dashboard: Ability to add items created by other users to your own wish list table",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Dashboard: Ability to remove items from your wish list table and return to the other user's wish list.",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Dashboard: Ability to permanently delete wish list items the logged user has created.",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Ability to add new items. Validation applies.",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Once the new item is added, it should be appended on the user's own wish list items table. It should also be appended on the other users' other wish list table when other users log in to their account",
+                    "value": 0.5
+                },
+                {
+                    "criteria": "Individual item page with the item name",
+                    "value": 0.25
+                },
+                {
+                    "criteria": "Individual item page: list of all users who has that item on their list.",
+                    "value": 0.5
+                }
+            ]
+        }
+    ]
 }
