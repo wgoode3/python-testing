@@ -17,6 +17,7 @@ That's it. The script ```run.sh``` should take care of setting up the virtual en
 
 ### Version
 Current Version: 0.7
+
 | Core Features                                                       | Version |
 |---------------------------------------------------------------------|:-------:|
 | file upload (Flask server)                                          | v 0.1   |
