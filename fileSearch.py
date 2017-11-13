@@ -12,7 +12,8 @@ from os.path import join, dirname, realpath, isfile, isdir
 
 """
 TODO List:
-1) beltScore   - use rubric to determine belt score
+1) beltScore      - use rubric to determine belt score
+2) refactor tests - remove the setUp method to speed them up
 """
 
 UPLOADS        = join(dirname(realpath(__file__)), "uploads")
