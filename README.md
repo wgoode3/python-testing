@@ -1,4 +1,7 @@
 # Python Assignment Testing
+
+<img src="https://raw.githubusercontent.com/wgoode3/python-testing/master/demo.gif" alt="demo.gif" />
+
 Automated testing to provide students feedback on the Python assignments they submit. If the students name their project correctly and follow the wireframe's directions, they should get feedback showing what features their project passes. 
 Current Version only supports testing Belt Exams.
 
